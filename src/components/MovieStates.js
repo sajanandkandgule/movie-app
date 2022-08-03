@@ -28,7 +28,7 @@ const MovieStates =(props) =>{
             <h3 className="card-title text-center"> Movie Status</h3>
             <h4 className="card-subtitle mb-2 text-muted"> TotalMovies -{movies.length}</h4>
             {
-                <h2 className="card-text"> # Top Ranked movie -{getTopRank()}</h2>
+                <p className="card-text"> # Top Ranked movie -{getTopRank()}</p>
             }
             </div>
 
