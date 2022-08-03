@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+
 const MovieStates =(props) =>{
 
     const movies = useSelector((state) =>{
@@ -22,12 +23,14 @@ const MovieStates =(props) =>{
       
     }
     return(
-        <div>
-            <h3> Movie Status</h3>
-            <h4> TotalMovies -{movies.length}</h4>
+        <div className="card" >
+            <div  className="card-body">
+            <h3 className="card-title text-center"> Movie Status</h3>
+            <h4 className="card-subtitle mb-2 text-muted"> TotalMovies -{movies.length}</h4>
             {
-                <h2> # Top Ranked movie -{getTopRank()}</h2>
+                <h2 className="card-text"> # Top Ranked movie -{getTopRank()}</h2>
             }
+            </div>
 
         </div>
     )

@@ -6,6 +6,7 @@ const MovieForm =(props) =>{
     //   const [id ,setId] = useState( Number (new Date()))
     const [movieName , setMovieName] =useState("")
     const [ranking , setRanking] = useState("")
+    
     const dispatch = useDispatch()
 
     const handleNameChange =(e) =>{
@@ -38,17 +39,22 @@ const MovieForm =(props) =>{
     }
 
     return(
-        <div>
-            
+        <div className="row" >
+          
+        <div className="col-md-8">
             <form onSubmit = {handleSubmit}>
            
-                <input type = "text"  value ={movieName}
+                <div>
+                <input type = "text"  value ={movieName}  className="form-control" id="formGroupExampleInput"
                  placeholder ="Enter Movie Name" onChange = {handleNameChange}/><br/> 
-                 <input type = "number" value = {ranking} 
+                 </div>
+                 <input type = "text"  value = {ranking} className="form-control" id="formGroupExampleInput2"
                  placeholder="Enter Movie Ranking" onChange = {handleRankChange}/><br/> 
-                 <input type= "submit" value="add" /> 
+                 <input type= "submit" className="btn btn-secondary" value="add" /> 
                 
             </form>
+            </div>
+            
         </div>
     )
 }

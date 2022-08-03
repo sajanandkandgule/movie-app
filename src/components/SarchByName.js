@@ -2,7 +2,7 @@ import React , {useState} from "react";
 import { useDispatch , useSelector } from "react-redux";
 import { searchAction } from "../action/searchAction";
   
-const SarchByName =(props) =>{
+const SearchByName =(props) =>{
 
 
     const dispatch =useDispatch()
@@ -17,9 +17,15 @@ const SarchByName =(props) =>{
     
     return(
         <div>
-            <input type = "text" name = "search" placeholder="Sarch By Name" onChange ={handleChange}/>
+            <input type = "text" name = "search" placeholder="search By Name" onChange ={handleChange}/>
 
         </div>
     )
 }
-export default SarchByName
+export default SearchByName
+
+
+
+
+
+ 

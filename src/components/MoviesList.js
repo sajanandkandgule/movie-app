@@ -1,13 +1,13 @@
 import React ,{useState ,useEffect} from "react";
 import { useSelector } from "react-redux";
 import MovieCard from "./MovieCard"
+import SearchByName from "./SarchByName";
 
 const MovieList =(props) =>{
     const [order , setOrder] = useState("")
 
     const movies = useSelector((state) =>{
         // console.log(state.movie)          // 1 to get data and map on it after 
-        
         return state.movie
     })
     const [moviesList , setMoviesList] = useState(movies)
@@ -17,7 +17,7 @@ const MovieList =(props) =>{
     },[movies])
 
     const search = useSelector((state)=>{
-        console.log('statesearch',state.search)
+        // console.log('statesearch',state.search)
         return state.search
     })
 
@@ -72,6 +72,13 @@ const MovieList =(props) =>{
 
     return(
         <div>
+            <div className="col-md-7">
+            <h3 >Movies List </h3>
+            <div>
+            <SearchByName/>
+            </div>
+           
+
             <select  class="form-select" aria-label="Disabled select example"
              onChange={handleChange} value={order}>
             <option value="">sortBy</option>
@@ -81,6 +88,7 @@ const MovieList =(props) =>{
             <option value="l-h">l-h</option>
         </select>
             <ul>
+            
             {
                 // movies.map((ele) =>{ return <MovieCard key = {ele.id} {..ele}})  // 1 step
                filteredMovies().map((ele) =>{
@@ -88,7 +96,7 @@ const MovieList =(props) =>{
                 })
             }
             </ul>
-
+            </div>
         </div>
     )
 }
